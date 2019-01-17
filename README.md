@@ -12,37 +12,37 @@
 - [x] Make your site live on gh-pages
 
 ### JS
-- [ ] Change the songs in the songs array
-- [ ] Update the song array in your project to have at least 4 songs
+- [x] Change the songs in the songs array
+- [x] Update the song array in your project to have at least 4 songs
 - [x] Create four new arrays to store
-- [ ] images_urls, artists, song lengths, and links
+- [x] images_urls, artists, song lengths, and links
 ### html / css
 - [ ] Customize your CSS or add another column
 
 ### Wrap
-- [ ] Push your changes!
+- [x] Push your changes!
 
 ## Day 2
 ### JS
-- [ ] Use forEach Loop to display the data from each of your array's in the correct div
-- [ ] Update the code to append and HTML Elements (img, p, a tags) using jQuery. 
+- [x] Use forEach Loop to display the data from each of your array's in the correct div
+- [x] Update the code to append and HTML Elements (img, p, a tags) using jQuery. 
 ### Wrap
-- [ ] Push your changes!
+- [x] Push your changes!
 
 
 ## Day 3
 ### JS
-- [ ] A working click handler
-- [ ] Retrieve user input
-- [ ] Push items to your song array
-- [ ] Display the result to the screen
+- [x] A working click handler
+- [x] Retrieve user input
+- [x] Push items to your song array
+- [x] Display the result to the screen
 
 ### Wrap
 - [ ] Push your changes!
 
 ## Extensions
 - [ ] Update the HTML and CSS to reflect your own style.
-- [ ] Add more songs to your list and song information to your list
+- [x] Add more songs to your list and song information to your list
 - [ ] Add a delete button to delete songs on your list
 - [ ] Use local storage to save your songs locally
 
