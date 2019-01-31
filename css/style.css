@@ -64,3 +64,12 @@ button {
     font-size: 14px;
     padding: 5px 10px;
 }
+
+img{
+    width: 100px;
+}
+
+body{
+    background: darkgray;
+    font-family: "Comic Sans MS";
+}

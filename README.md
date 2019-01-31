@@ -17,7 +17,7 @@
 - [x] Create four new arrays to store
 - [x] images_urls, artists, song lengths, and links
 ### html / css
-- [ ] Customize your CSS or add another column
+- [x] Customize your CSS or add another column
 
 ### Wrap
 - [x] Push your changes!
@@ -38,10 +38,10 @@
 - [x] Display the result to the screen
 
 ### Wrap
-- [ ] Push your changes!
+- [x] Push your changes!
 
 ## Extensions
-- [ ] Update the HTML and CSS to reflect your own style.
+- [x] Update the HTML and CSS to reflect your own style.
 - [x] Add more songs to your list and song information to your list
 - [ ] Add a delete button to delete songs on your list
 - [ ] Use local storage to save your songs locally
