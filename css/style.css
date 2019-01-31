@@ -10,7 +10,6 @@ h1 {
 }
 
 .column {
-    width: 18%;
     padding: 25px 0px;
 }
 
@@ -72,4 +71,10 @@ img{
 body{
     background: darkgray;
     font-family: "Comic Sans MS";
+}
+
+.column p {
+    font-size: 18px;
+    height: 100px;
+    margin: 20px;
 }

@@ -7,7 +7,7 @@ var songs = ["Sono chi no Sadame", "BLOODY STREAM", "Stand Proud", "Sono chi no 
 var artists = ["Hiroaki Tommy Tominaga", "Coda", "Jin Hashimoto", "TOMMY, Coda, JIN", "THE DU", "batta", "Daisuke Hasegawa, Karen Aoki", "Coda"];
 var imageLinks = ["https://vignette.wikia.nocookie.net/jjba/images/e/eb/Jojo_OP1.jpg/revision/latest?cb=20161224021953", "https://vignette.wikia.nocookie.net/jjba/images/3/34/Jojo_OP2.jpg/revision/latest/scale-to-width-down/700?cb=20121215082647", "https://vignette.wikia.nocookie.net/jjba/images/b/b3/Jojo_OP3.png/revision/latest/scale-to-width-down/700?cb=20150923021312", "https://vignette.wikia.nocookie.net/jjba/images/9/9d/Jojo_OP4.jpg/revision/latest?cb=20180520100147", "https://vignette.wikia.nocookie.net/jjba/images/4/4f/Jojo_OP5.jpg/revision/latest?cb=20160326235703", "https://vignette.wikia.nocookie.net/jjba/images/c/c2/Jojo_OP6.jpg/revision/latest/scale-to-width-down/700?cb=20180520101152", "https://vignette.wikia.nocookie.net/jjba/images/8/8a/JoJo_OP7.png/revision/latest/scale-to-width-down/699?cb=20161018200049", "https://vignette.wikia.nocookie.net/jjba/images/8/88/JoJo_OP8.jpg/revision/latest/scale-to-width-down/699?cb=20181015010421"];
 var songLengths = ["4:20", "4:22", "4:38", "4:21", "3:07", "3:05", "4:01", "4:41"];
-var songLinks = ["https://www.youtube.com/watch?v=yI3pg_YJnPM", "https://www.youtube.com/watch?v=KoY66lqmcYA", "https://www.youtube.com/watch?v=1u4xAB_-J74", "https://www.youtube.com/watch?v=E8n7zt4D-0Y", "https://www.youtube.com/watch?v=Rs0N_Lq6Gmo&vl=en", "https://www.youtube.com/watch?v=yml_GtuwY6o", "https://www.youtube.com/watch?v=GS12_iXq8Uw", "https://www.youtube.com/watch?v=rGfAyOFUdEY"];
+var songLinks = ["https://www.youtube.com/watch?v=yI3pg_YJnPM", "https://www.youtube.com/watch?v=KoY66lqmcYA", "https://www.youtube.com/watch?v=1u4xAB_-J74", "https://www.youtube.com/watch?v=E8n7zt4D-0Y", "https://www.youtube.com/watch?v=Rs0N_Lq6Gmo&vl=en", "https://www.youtube.com/watch?v=yml_GtuwY6o", "https://www.youtube.com/watch?v=E3SLE19QLEs", "https://www.youtube.com/watch?v=rGfAyOFUdEY"];
 
 var playlist = [songs, artists, imageLinks, songLengths, songLinks];
     // BELOW Use forEach Loop to display the data from each of your array's in the correct div
@@ -20,6 +20,7 @@ function emptySongInfo(){
     $("#images").empty();
     $("#lengths").empty();
     $("#links").empty();
+    $("#delet").empty();
 }
 
 
@@ -33,7 +34,6 @@ function addSongInfo(){
         songLinks.push($("#link").val());
         playlist = [songs, artists, imageLinks, songLengths, songLinks];
     }
-    //localStorage.setItem("playlist", playlist);
 }
 
 function displaySongInfo(){
@@ -42,9 +42,27 @@ function displaySongInfo(){
         $("#songs").append("<p>" + songs[i] + "</p>");
         $("#artists").append("<p>" + artists[i] + "</p>");
         $("#lengths").append("<p>" + songLengths[i] + "</p>");
-        $("#links").append("<p>" + "<a href=" + songLinks[i] + ">" + songLinks[i] +"</a></p>");
-    })
-        
+        if(songLinks[i].substr(0,32)=="https://www.youtube.com/watch?v="){
+            songLinks[i] = songLinks[i].substr(32, songLinks[i].length);
+            $("#links").append('<p><iframe height="100" src="https://www.youtube.com/embed/'+songLinks[i]+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>');
+        }else{
+            $("#links").append("<p>" + "<a href=" + songLinks[i] + ">" + songLinks[i] +"</a></p>");
+        }
+        $("#delet").append("<p><button class='delete' id='button"+i+"'>Remove</button></p>");
+    });
+    
+    $(".delete").click(function(){
+        var id = this.getAttribute("id");
+        var e = id.substring(6,id.length);
+        songs.splice(e, 1, );
+        artists.splice(e, 1, );
+        imageLinks.splice(e, 1, );
+        songLengths.splice(e, 1, );
+        songLinks.splice(e, 1, );
+        emptySongInfo();
+        addSongInfo();
+        displaySongInfo();
+    });
 }
 
 $("#add").click(function() {
